@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -121,3 +122,8 @@ def ip_addresses():
 # Discover our IP address
 ALLOWED_HOSTS = ip_addresses()
 
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'templates'),
+    'main',
+)
