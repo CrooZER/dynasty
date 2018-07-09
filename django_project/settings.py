@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'main'
 )
 
@@ -82,6 +83,7 @@ DATABASES = {
     }
 }
 
+STATIC_ROOT="/static/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
