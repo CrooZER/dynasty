@@ -83,7 +83,7 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT="/static/"
+STATIC_ROOT="django_project/static"
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
