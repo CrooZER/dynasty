@@ -7,19 +7,66 @@
 
         </div>
 
-        <div class="section">
+           {#   ########################  CARDS ################################# #}
+    <section class="section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
 
+                <div class="col-md-6">
+                    <h3>Franchises</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Division
+                        </button>
+
+                        <div class="dropdown-menu division-select">
+                            <a class="dropdown-item" href="#" data-value="00">Great</a>
+                            <a class="dropdown-item" href="#" data-value="01">Next Gen</a>
+                            <a class="dropdown-item" href="#" data-value="02">3RD & LONG</a>
+                            <a class="dropdown-item" href="#" data-value="03">4 Seasons</a>
+                            <a class="dropdown-item" href="#" data-value="04">Russell'5</a>
+                            <a class="dropdown-item" href="#" data-value="05">LEG VI</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-value="ALL">All</a>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Basic dropdown -->
+
+            <div class="row">
+                {% for franchise in league.league.franchises.franchise %}
+                    <div class="col-md-2">
+                    <!-- Card -->
+                    <div class="card " data-division="{{ franchise.division }}" style="margin-bottom: 25px;">
+                        <div class="view overlay">
+                            <!-- Card image -->
+                            <img class="card-img-top" src="{{ franchise.icon }}" width="100%" height="175px"
+                                 alt="Card image cap">
+                        </div>
+                        <!-- Card content -->
+                        <div class="card-body" style="min-height: 114px;">
+
+                            <!-- Title -->
+                            <h4 class="card-title"><a> {{ franchise.owner_name }}</a></h4>
+                            <!-- Text -->
+                            <p class="card-text">{{ franchise.name }} </p>
+                            <!-- Button -->
+
+
+                        </div>
+                        <!-- Card -->
+                    </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
         </div>
-        </div>
+    </section>
 
         <footer class="footer" data-background-color="black">
             <div class="container">

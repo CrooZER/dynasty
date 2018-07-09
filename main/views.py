@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from main.mfl import MFL
+import json
+from django.core import serializers
+
+from . import mfl
 
 # Create your views here.
 
@@ -7,4 +12,6 @@ def index(request):
     return render(request, 'index.html')
 
 def managers(request):
-    return render(request, 'managers.html')
+    league = MFL().get_league()
+    league = json.loads(league)
+    return render(request, 'managers.html', locals())
