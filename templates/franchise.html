@@ -1,0 +1,72 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="page-header clear-filter" filter-color="orange" style="height: 80px">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('../static/img/header.jpg');">
+            </div>
+
+        </div>
+                
+       <section>
+       <div class="container">
+           <div class="row">
+               <div class="col-md-12">
+                   <table class="table">
+                       <thead>
+                       <tr>
+                           <td>Name</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                       </tr>
+                       </thead>
+                       <tbody>
+                       {{ roster }}
+                       {% for player in roster.franchise.player %}
+                            {{ player }}
+                       {% endfor %}
+
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+       </div>
+       </section>
+        <footer class="footer" data-background-color="black">
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="https://www.creative-tim.com">
+                                Creative Tim
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://presentation.creative-tim.com">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://blog.creative-tim.com">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                                MIT License
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>, Designed by
+                    <a href="http://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+                    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+                </div>
+            </div>
+        </footer>
+
+{% endblock %}

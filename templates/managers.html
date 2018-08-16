@@ -51,7 +51,7 @@
                         <div class="card-body" style="min-height: 114px;">
 
                             <!-- Title -->
-                            <h4 class="card-title"><a> {{ franchise.owner_name }}</a></h4>
+                            <h4 class="card-title"><a href="{% url 'franchise' id=franchise.id %}"> {{ franchise.owner_name }}</a></h4>
                             <!-- Text -->
                             <p class="card-text">{{ franchise.name }} </p>
                             <!-- Button -->

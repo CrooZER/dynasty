@@ -26,7 +26,7 @@ class MFL:
 
         return result
 
-    def rosters(self, id = None):
+    def rosters(id):
         params = {'TYPE': 'rosters'}
         url = 'http://www62.myfantasyleague.com/2018/export?TYPE=rosters&L=74575&APIKEY=bRdp18CSvuKnx1GmP13EZjceEKctiQ%3D%3D&FRANCHISE={}&JSON=1'.format(id)
         result = requests.get(url)

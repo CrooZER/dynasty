@@ -18,12 +18,18 @@ class BetStatus(models.Model):
         return self.name
 
 class Bet(models.Model):
+    RESULT_CHOICES = (
+        (1, 'First Side'),
+        (2, 'Second Side')
+    )
     first_side = models.ForeignKey(Manager, related_name='first_side_manager')
     second_side = models.ForeignKey(Manager, related_name='second_side_manager')
+    first_side_bet = models.TextField(max_length=250, null=True)
+    second_side_bet = models.TextField(max_length=250, null=True)
     title  = models.CharField(max_length=50, default='Bet')
     note = models.TextField(null=True)
     status = models.ForeignKey(BetStatus)
-    result = models.TextField(null=True)
+    result = models.IntegerField(null=True, choices=RESULT_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

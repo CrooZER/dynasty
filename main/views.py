@@ -15,3 +15,7 @@ def managers(request):
     league = MFL().get_league()
     league = json.loads(league)
     return render(request, 'managers.html', locals())
+
+def franchise(request, id):
+    roster = MFL.rosters(id)
+    return render(request, 'franchise.html', locals())
