@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^managers/', views.managers),
     url(r'^franchise/(?P<id>\d+)', views.franchise, name='franchise'),
+    url(r'^api/', include('main.urls'))
 ]

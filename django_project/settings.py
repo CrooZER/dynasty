@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'rest_framework'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,7 +83,14 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT="django_project/static"
+
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+)
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "django_project/static"),
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -129,4 +137,4 @@ TEMPLATE_DIRS = (
     'main',
 )
 
-MFL_PASS='Artem11235813'
+MFL_PASS="Artem11235813"
