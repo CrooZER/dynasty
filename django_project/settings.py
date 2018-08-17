@@ -133,3 +133,9 @@ TEMPLATE_DIRS = (
 )
 
 MFL_PASS="Artem11235813"
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework_jsonp.renderers.JSONPRenderer',
+    ),
+}
